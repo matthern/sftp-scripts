@@ -41,5 +41,5 @@ done < "$userlist_file"
 if [ -n "$remote_script" ]; then
 	scp -i /home/"$remote_user"/.ssh/id_rsa -o StrictHostKeyChecking=no "$userlist_file" $remote_user@$remote_server:/home/"$remote_user"/"$userlist_file" &&
 	scp -i /home/"$remote_user"/.ssh/id_rsa -o StrictHostKeyChecking=no "$remote_script" $remote_user@$remote_server:/home/"$remote_user"/"$remote_script"
-  ssh $remote_user@$remote_server "bash -s" < "$remote_script" "$userlist_file" 
+  	ssh $remote_user@$remote_server "bash -s" < "$remote_script" "$userlist_file" 
 fi
